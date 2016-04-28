@@ -669,6 +669,7 @@ module ArJdbc
       return result if result.is_a? Integer
       # <ActiveRecord::Result @hash_rows=nil, @columns=["id"], @rows=[[3]]>
       # but it will work with [{ 'id' => 1 }] Hash wrapped results as well
+      
       row = result.first
       row && row.first[1] # .first = { "id"=>1 } .first = [ "id", 1 ]
     end
